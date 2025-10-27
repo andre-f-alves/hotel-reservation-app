@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HotelReservation.Views.Reservation"
+             Title="Reservation"
+             NavigationPage.HasNavigationBar="False">
+
+  <ContentPage.Resources>
+    <Style TargetType="Label"
+           x:Key="Headline">
+      <Setter Property="FontFamily"
+              Value="BodoniModa"/>
+      <Setter Property="FontSize"
+              Value="32"/>
+      <Setter Property="TextColor"
+              Value="Goldenrod"/>
+    </Style>
+
+    <Style TargetType="Label"
+           x:Key="Subhead">
+      <Setter Property="HorizontalOptions" Value="Center"/>
+      <Setter Property="FontSize"
+              Value="18"/>
+    </Style>
+
+    <Style TargetType="Border"
+           x:Key="CardStyle">
+      <Setter Property="Stroke"
+              Value="Goldenrod"/>
+      <Setter Property="StrokeThickness"
+              Value="2"/>
+      <Setter Property="StrokeShape">
+        <Setter.Value>
+          <RoundRectangle
+            CornerRadius="10"/>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </ContentPage.Resources>
+
+  <VerticalStackLayout
+    Padding="20"
+    Spacing="20">
+    <Label
+      Text="Faça a sua reserva"
+      VerticalOptions="Center"
+      HorizontalOptions="Center"
+      Style="{StaticResource Headline}"/>
+
+    <Border Style="{StaticResource CardStyle}">
+      <VerticalStackLayout
+        Padding="15"
+        Spacing="15">
+        <Grid
+          RowDefinitions="Auto, Auto"
+          ColumnDefinitions="*, *, 2*">
+          <Label
+            Text="Adultos:"
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalOptions="Center"/>
+
+          <Label
+            BindingContext="{x:Reference stepper_adultos}"
+            Text="{Binding Value}"
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+          <Stepper
+            x:Name="stepper_adultos"
+            Increment="1"
+            Minimum="0"
+            Maximum="10"
+            Grid.Row="0"
+            Grid.Column="2"/>
+
+          <Label
+            Text="Crianças:"
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalOptions="Center"/>
+
+          <Label
+            BindingContext="{x:Reference stepper_criancas}"
+            Text="{Binding Value}"
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+
+          <Stepper
+            x:Name="stepper_criancas"
+            Increment="1"
+            Minimum="0"
+            Maximum="10"
+            Grid.Row="1"
+            Grid.Column="2"/>
+        </Grid>
+
+        <Label
+          Text="Escolha o quarto"
+          Style="{StaticResource Subhead}"/>
+
+        <Picker
+          x:Name="room_picker"
+          Title="Selecione a acomodação"/>
+
+        <Border Style="{StaticResource CardStyle}">
+          <VerticalStackLayout
+            Padding="15"
+            Spacing="15">
+            <Label
+              Text="Período da Estadia"
+              Style="{StaticResource Subhead}"/>
+
+            <HorizontalStackLayout
+              Spacing="10">
+              <Label
+                Text="Check-in:"
+                VerticalOptions="Center"/>
+
+              <DatePicker
+                x:Name="checkin_datepicker"
+                Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+              Spacing="10">
+              <Label
+                Text="Check-out:"
+                VerticalOptions="Center"/>
+
+              <DatePicker
+                x:Name="checkout_datepicker"
+                Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+          </VerticalStackLayout>
+        </Border>
+
+        <Button
+          Text="Reservar"
+          Background="Goldenrod"
+          FontAttributes="Bold"
+          TextColor="White"/>
+      </VerticalStackLayout>
+    </Border>
+
+    <Button
+      Text="Saiba mais"
+      Clicked="Button_Clicked"
+      Background="#FF7125FD"
+      TextColor="White"/>
+  </VerticalStackLayout>
+</ContentPage>

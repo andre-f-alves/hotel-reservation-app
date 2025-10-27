@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HotelReservation.About"
+             Title="About"
+             NavigationPage.HasNavigationBar="False">
+  <VerticalStackLayout
+    Padding="20"
+    Spacing="20">
+    <Label
+      Text="Hotel Reservation App"
+      VerticalOptions="Center"
+      HorizontalOptions="Center"
+      FontSize="28"/>
+
+    <Label
+      Text="Aplicativo de reserva de hotel."
+      VerticalOptions="Center"
+      HorizontalOptions="Center"/>
+
+    <Label
+      Text="Projeto desenvolvido com .NET MAUI."
+      VerticalOptions="Center"
+      HorizontalOptions="Center"/>
+
+    <Label
+      Text="Copyright © 2024 André Alves."
+      VerticalOptions="Center"
+      HorizontalOptions="Center"/>
+
+    <Button
+      Text="Voltar para Reserva"
+      Clicked="Button_Clicked"
+      Background="#FF7125FD"
+      TextColor="White"/>
+  </VerticalStackLayout>
+</ContentPage>
