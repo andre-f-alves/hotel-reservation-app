@@ -27,7 +27,7 @@
       Style="{StaticResource LabelStyle}"/>
 
     <Label
-      Text="Copyright © 2024 André Alves."
+      Text="Copyright © 2025 André Alves."
       Style="{StaticResource LabelStyle}"/>
 
     <Button
