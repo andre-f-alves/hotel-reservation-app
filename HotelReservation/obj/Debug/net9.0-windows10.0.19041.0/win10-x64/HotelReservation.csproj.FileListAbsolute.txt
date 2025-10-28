@@ -517,3 +517,4 @@ C:\Users\andre\source\repos\HotelReservation\HotelReservation\bin\Debug\net9.0-w
 C:\Users\andre\source\repos\HotelReservation\HotelReservation\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\BodoniModa.ttf
 C:\Users\andre\source\repos\HotelReservation\HotelReservation\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\BodoniModa-Italic.ttf
 C:\Users\andre\source\repos\HotelReservation\HotelReservation\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\f\BodoniModa.ttf
+C:\Users\andre\source\repos\HotelReservation\HotelReservation\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\HotelReservation.sourcelink.json

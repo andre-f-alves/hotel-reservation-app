@@ -4,32 +4,34 @@
              x:Class="HotelReservation.About"
              Title="About"
              NavigationPage.HasNavigationBar="False">
+  <ContentPage.Resources>
+    <Style TargetType="Label" x:Key="LabelStyle">
+      <Setter Property="HorizontalTextAlignment" Value="Center"/>
+    </Style>
+  </ContentPage.Resources>
+  
   <VerticalStackLayout
     Padding="20"
     Spacing="20">
     <Label
       Text="Hotel Reservation App"
-      VerticalOptions="Center"
-      HorizontalOptions="Center"
+      Style="{StaticResource LabelStyle}"
       FontSize="28"/>
 
     <Label
-      Text="Aplicativo de reserva de hotel."
-      VerticalOptions="Center"
-      HorizontalOptions="Center"/>
+      Text="Aplicativo de reserva de quartos de hotel."
+      Style="{StaticResource LabelStyle}"/>
 
     <Label
-      Text="Projeto desenvolvido com .NET MAUI."
-      VerticalOptions="Center"
-      HorizontalOptions="Center"/>
+      Text="Projeto desenvolvido com .NET MAUI para o curso técnico de Desenvolvimento de Sistemas do Centro Paula Souza."
+      Style="{StaticResource LabelStyle}"/>
 
     <Label
       Text="Copyright © 2024 André Alves."
-      VerticalOptions="Center"
-      HorizontalOptions="Center"/>
+      Style="{StaticResource LabelStyle}"/>
 
     <Button
-      Text="Voltar para Reserva"
+      Text="Voltar à reserva de quartos"
       Clicked="Button_Clicked"
       Background="#FF7125FD"
       TextColor="White"/>
