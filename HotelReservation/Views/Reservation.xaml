@@ -105,7 +105,8 @@
 
         <Picker
           x:Name="room_picker"
-          Title="Selecione a acomodação"/>
+          Title="Selecione a acomodação"
+          ItemDisplayBinding="{Binding Description}"/>
 
         <Border Style="{StaticResource CardStyle}">
           <VerticalStackLayout
@@ -123,6 +124,7 @@
 
               <DatePicker
                 x:Name="checkin_datepicker"
+                DateSelected="checkin_datepicker_DateSelected"
                 Format="dd/MM/yyyy"/>
             </HorizontalStackLayout>
 
@@ -141,6 +143,7 @@
 
         <Button
           Text="Reservar"
+          Clicked="Button_Clicked1"
           Background="Goldenrod"
           FontAttributes="Bold"
           TextColor="White"/>

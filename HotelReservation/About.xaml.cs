@@ -9,6 +9,6 @@ public partial class About : ContentPage
   
   private void Button_Clicked(object sender, EventArgs e)
   {
-    App.Current.MainPage = new NavigationPage(new Views.Reservation());
+    Navigation.PopAsync();
   }
 }

@@ -4,10 +4,139 @@
              x:Class="HotelReservation.Views.ReservationView"
              Title="ReservationView"
              NavigationPage.HasNavigationBar="False">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+  <ContentPage.Resources>
+    <Style TargetType="Label"
+           x:Key="Headline">
+      <Setter Property="FontFamily"
+              Value="BodoniModa"/>
+      <Setter Property="FontSize"
+              Value="32"/>
+      <Setter Property="TextColor"
+              Value="Goldenrod"/>
+    </Style>
+
+    <Style TargetType="Border"
+           x:Key="CardStyle">
+      <Setter Property="Stroke"
+              Value="Goldenrod"/>
+      <Setter Property="StrokeThickness"
+              Value="2"/>
+      <Setter Property="StrokeShape">
+        <Setter.Value>
+          <RoundRectangle
+            CornerRadius="10"/>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style TargetType="Label"
+           x:Key="GridElement">
+      <Setter Property="HorizontalOptions"
+              Value="Center"/>
+      <Setter Property="VerticalOptions"
+              Value="Center"/>
+      <Setter Property="HorizontalTextAlignment"
+              Value="Center"/>
+    </Style>
+  </ContentPage.Resources>
+
+  <VerticalStackLayout
+    Padding="20"
+    Spacing="20">
+    <Label
+      Text="Quarto Reservado"
+      VerticalOptions="Center"
+      HorizontalOptions="Center"
+      Style="{StaticResource Headline}"/>
+
+    <Border
+      Style="{StaticResource CardStyle}">
+      <HorizontalStackLayout
+        HorizontalOptions="Center"
+        Padding="15"
+        Spacing="15">
+        <HorizontalStackLayout
+          Spacing="5">
+          <Label
+            Text="Adultos:"/>
+          <Label
+            Text="-"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+          Spacing="5">
+          <Label
+            Text="Crianças:"/>
+          <Label
+            Text="-"/>
+        </HorizontalStackLayout>
+      </HorizontalStackLayout>
+    </Border>
+
+    <Border
+      Style="{StaticResource CardStyle}">
+      <Grid
+        RowDefinitions="Auto, Auto"
+        ColumnDefinitions="*, *, *"
+        Padding="15"
+        ColumnSpacing="15">
+        <Label
+          Text="Data de Check-in:"
+          Grid.Row="0"
+          Grid.Column="0"
+          Style="{StaticResource GridElement}"/>
+
+        <Label
+          Text="Data de Check-out:"
+          Grid.Row="0"
+          Grid.Column="1"
+          Style="{StaticResource GridElement}"/>
+
+        <Label
+          Text="Estadia:"
+          Grid.Row="0"
+          Grid.Column="2"
+          Style="{StaticResource GridElement}"/>
+
+        <Label
+          Text="-/-/-"
+          Grid.Row="1"
+          Grid.Column="0"
+          Style="{StaticResource GridElement}"/>
+
+        <Label
+          Text="-/-/-"
+          Grid.Row="1"
+          Grid.Column="1"
+          Style="{StaticResource GridElement}"/>
+
+        <Label
+          Text="-"
+          Grid.Row="1"
+          Grid.Column="2"
+          Style="{StaticResource GridElement}"/>
+      </Grid>
+    </Border>
+
+    <Border
+      Style="{StaticResource CardStyle}">
+      <HorizontalStackLayout
+        Padding="15">
+        <HorizontalStackLayout
+          Spacing="5">
+          <Label
+            Text="Valor total:"/>
+          <Label
+            Text="R$ -"/>
+        </HorizontalStackLayout>
+      </HorizontalStackLayout>
+    </Border>
+
+    <Button
+      Text="Voltar"
+      Clicked="Button_Clicked"
+      Background="#FF7125FD"
+      FontAttributes="Bold"
+      TextColor="White"/>
+  </VerticalStackLayout>
 </ContentPage>

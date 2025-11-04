@@ -1,7 +1,36 @@
-﻿namespace HotelReservation;
+﻿using HotelReservation.Models;
+
+namespace HotelReservation;
 
 public partial class App : Application
 {
+  public List<Room> rooms_list = new()
+  {
+    new()
+    {
+      Description = "Suíte Super Luxo",
+      AdultDailyPrice = 110.0,
+      ChildDailyPrice = 55.0
+    },
+    new()
+    {
+      Description = "Suíte Luxo",
+      AdultDailyPrice = 80.0,
+      ChildDailyPrice = 40.0
+    },
+    new()
+    {
+      Description = "Suíte Single",
+      AdultDailyPrice = 50.0,
+      ChildDailyPrice = 25.0
+    },
+    new()
+    {
+      Description = "Suíte Econômica",
+      AdultDailyPrice = 30.0,
+      ChildDailyPrice = 15.0
+    }
+  };
 	public App()
 	{
 		InitializeComponent();
