@@ -1,3 +1,5 @@
+using HotelReservation.Models;
+
 namespace HotelReservation.Views;
 
 public partial class Reservation : ContentPage
@@ -23,15 +25,27 @@ public partial class Reservation : ContentPage
     Navigation.PushAsync(new About());
   }
 
-  private void Button_Clicked1(object sender, EventArgs e)
+  private async void Button_Clicked1(object sender, EventArgs e)
   {
     try
     {
-      Navigation.PushAsync(new ReservationView());
+      ReservationModel reservation = new()
+      {
+        Room = (Room)room_picker.SelectedItem,
+        Adults = Convert.ToInt32(stepper_adultos.Value),
+        Children = Convert.ToInt32(stepper_criancas.Value),
+        CheckIn = checkin_datepicker.Date,
+        CheckOut = checkout_datepicker.Date
+      };
+
+      await Navigation.PushAsync(new ReservationView()
+      {
+        BindingContext = reservation
+      });
     }
     catch (Exception ex)
     {
-      DisplayAlert("Erro", ex.Message, "OK");
+      await DisplayAlert("Erro", ex.Message, "OK");
     }
   }
 

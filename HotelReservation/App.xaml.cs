@@ -4,8 +4,8 @@ namespace HotelReservation;
 
 public partial class App : Application
 {
-  public List<Room> rooms_list = new()
-  {
+  public List<Room> rooms_list =
+  [
     new()
     {
       Description = "Suíte Super Luxo",
@@ -30,7 +30,7 @@ public partial class App : Application
       AdultDailyPrice = 30.0,
       ChildDailyPrice = 15.0
     }
-  };
+  ];
 	public App()
 	{
 		InitializeComponent();

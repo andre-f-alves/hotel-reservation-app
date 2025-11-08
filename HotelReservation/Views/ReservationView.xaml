@@ -44,33 +44,21 @@
     Padding="20"
     Spacing="20">
     <Label
-      Text="Quarto Reservado"
+      Text="{Binding Room.Description}"
       VerticalOptions="Center"
       HorizontalOptions="Center"
       Style="{StaticResource Headline}"/>
 
     <Border
       Style="{StaticResource CardStyle}">
-      <HorizontalStackLayout
-        HorizontalOptions="Center"
-        Padding="15"
-        Spacing="15">
-        <HorizontalStackLayout
-          Spacing="5">
-          <Label
-            Text="Adultos:"/>
-          <Label
-            Text="-"/>
-        </HorizontalStackLayout>
-
-        <HorizontalStackLayout
-          Spacing="5">
-          <Label
-            Text="Crianças:"/>
-          <Label
-            Text="-"/>
-        </HorizontalStackLayout>
-      </HorizontalStackLayout>
+      <FlexLayout
+        JustifyContent="SpaceEvenly"
+        Padding="15">
+        <Label
+          Text="{Binding Adults, StringFormat='Adultos: {0}'}"/>
+        <Label
+          Text="{Binding Children, StringFormat='Crianças: {0}'}"/>
+      </FlexLayout>
     </Border>
 
     <Border
@@ -99,19 +87,19 @@
           Style="{StaticResource GridElement}"/>
 
         <Label
-          Text="-/-/-"
+          Text="{Binding CheckIn, StringFormat='{0:dd/MM/yyyy}'}"
           Grid.Row="1"
           Grid.Column="0"
           Style="{StaticResource GridElement}"/>
 
         <Label
-          Text="-/-/-"
+          Text="{Binding CheckOut, StringFormat='{0:dd/MM/yyyy}'}"
           Grid.Row="1"
           Grid.Column="1"
           Style="{StaticResource GridElement}"/>
 
         <Label
-          Text="-"
+          Text="{Binding Stay, StringFormat='{0} dias'}"
           Grid.Row="1"
           Grid.Column="2"
           Style="{StaticResource GridElement}"/>
@@ -119,17 +107,10 @@
     </Border>
 
     <Border
-      Style="{StaticResource CardStyle}">
-      <HorizontalStackLayout
-        Padding="15">
-        <HorizontalStackLayout
-          Spacing="5">
-          <Label
-            Text="Valor total:"/>
-          <Label
-            Text="R$ -"/>
-        </HorizontalStackLayout>
-      </HorizontalStackLayout>
+      Style="{StaticResource CardStyle}"
+      Padding="15">
+      <Label
+        Text="{Binding TotalPrice, StringFormat='Valor total: {0:c}'}"/>
     </Border>
 
     <Button
